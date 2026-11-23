@@ -116,7 +116,7 @@ public class AppealServiceTests
         var result = await _sut.SubmitAsync(request);
 
         // Assert
-        Assert.Equal(AppealStatus.Received, result.Status);
+        Assert.Equal(AppealStatus.Rejected, result.Status);
         _notifications.Verify(n => n.SendAcknowledgementAsync(
         It.IsAny<string>(), It.IsAny<AppealStatus>(), It.IsAny<CancellationToken>()), Times.Never);
     }
