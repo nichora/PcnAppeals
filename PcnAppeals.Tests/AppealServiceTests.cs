@@ -106,6 +106,7 @@ public class AppealServiceTests
         Assert.Equal(AppealStatus.Received, result.Status);
     }
 
+    [Fact]
     [Trait("Category", "Integration")]
     public async Task Submit_WrongRegistration_ReturnsRejectedAndSendsNoNotification()
     {
