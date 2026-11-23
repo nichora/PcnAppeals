@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/.github/workflows/">
+    <File Path=".github/workflows/build-and-test.yml" />
+  </Folder>
   <Project Path="PcnAppeals.Core/PcnAppeals.Core.csproj" />
   <Project Path="PcnAppeals.Tests/PcnAppeals.Tests.csproj" />
 </Solution>

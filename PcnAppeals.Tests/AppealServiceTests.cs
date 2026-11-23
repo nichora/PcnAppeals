@@ -57,10 +57,11 @@ public class AppealServiceTests
     [Theory]
     [InlineData("")]
     [InlineData("   ")]
-    public async Task Submit_BlankReason_ReturnsRejected(string reason)
+    [InlineData(null)]
+    public async Task Submit_BlankReason_ReturnsRejected(string? reason)
     {
         // Arrange
-        var request = ValidRequest(reason: reason);
+        var request = ValidRequest(reason: reason!);
 
         // Act
         var result = await _sut.SubmitAsync(request);
@@ -153,6 +154,8 @@ public class AppealServiceTests
 
         // Assert
         Assert.Equal(AppealStatus.Rejected, result.Status);
+        _notifications.Verify(n => n.SendAcknowledgementAsync(
+         It.IsAny<string>(), It.IsAny<AppealStatus>(), It.IsAny<CancellationToken>()), Times.Never);
     }
 
 }
