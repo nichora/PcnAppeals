@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="PcnAppeals.Core/PcnAppeals.Core.csproj" />
+  <Project Path="PcnAppeals.Tests/PcnAppeals.Tests.csproj" />
+</Solution>
